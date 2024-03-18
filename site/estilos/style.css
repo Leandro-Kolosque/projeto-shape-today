@@ -1,0 +1,287 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Madimi+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    --cor01: #b80000;
+    --cor02: #b11b25;
+    --cor03: #112128;
+    --cor04: #fdf7fa;
+    --cor05: #fcfff7;
+    --cor06: #f0da16;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Formatação do Cabeçalho */
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(21, 21, 21);
+}
+
+.img-logo {
+    height: 90px;
+    margin-left: 50px;
+}
+
+.header-menu {
+    margin-right: 50px;
+    display: flex;
+    gap: 40px;
+}
+
+.header-menu-item {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--cor04);
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.header-menu-item:hover {
+    font-weight: bolder;
+}
+
+.text-decoration-contato {
+    background-color: var(--cor01);
+    border: 10px solid var(--cor01);
+    border-radius: 20px 0px 20px 20px;
+}
+
+/*Formatação do Main */
+.principal {
+    margin: 25px;
+}
+
+/*Formatação da Section SOBRE*/
+.div-sobre-img {
+    position: relative;
+    display: inline-block;
+}
+
+.section-sobre-img {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-sobre-img-title {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 70px;
+    color: var(--cor04);
+    font-family: "Kode Mono", monospace;
+}
+
+.div-sobre-text-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.section-sobre-text-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Madimi One", sans-serif;
+    border-bottom: 4px solid var(--cor01);
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.shape-today {
+    color: var(--cor01);
+}
+
+.div-sobre-text-p {
+    padding: 25px;
+    background-color: black;
+}
+
+.section-sobre-text-p {
+    padding: 35px;
+    color: var(--cor04);
+    text-align: center;
+}
+
+.section-sobre-text-p:hover {
+    border: 4px solid var(--cor01);
+}
+
+/*Formatação da section UNIDADES*/
+.section-unidades {
+    padding: 10px;
+    margin-top: 10px;
+    background: linear-gradient(to bottom, var(--cor01), #9f2f2f, #6c3c3c, #141414);
+}
+
+.div-unidades-text-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-unidades-text-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Madimi One", sans-serif;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.section-unidades-list-title {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 0;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.section-unidades-list-items {
+    list-style: none;
+    color: var(--cor04);
+    border: 4px solid var(--cor04);
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: "Roboto Mono", monospace;
+}
+
+.section-unidades-list-items:hover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 0px;
+}
+
+.section-unidades-list-items#matriz:hover {
+    background-image: url(../imagens/a-matriz-pqn.jpg);
+}
+
+.section-unidades-list-items#filial01:hover {
+    background-image: url(../imagens/filial01.jpg);
+}
+
+.section-unidades-list-items#filial02:hover {
+    background-image: url(../imagens/filial02.jpg);
+    background-position: center;
+}
+
+.section-unidades-list-items#filial03:hover {
+    background-image: url(../imagens/filial03.jpg);
+}
+
+.section-unidades-list-items#filial04:hover {
+    background-image: url(../imagens/filial04.jpg);
+}
+
+/*Formatação da Section APP */
+.section-app {
+    padding: 10px;
+    margin-top: 10px;
+    border: 4px solid var(--cor01);
+}
+
+.div-app-img-text {
+    display: flex;
+    flex-direction: row;
+}
+
+.section-app-text-title {
+    text-align: left;
+    font-family: "Madimi One", sans-serif;
+    font-size: 30px;
+    margin-left: 40px;
+    text-transform: uppercase;
+}
+
+.section-app-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30vw;
+}
+
+.div-app-text {
+    border: 2px solid var(--cor01);
+}
+
+.section-app-description-text-title {
+    text-align: left;
+    font-family: "Madimi One", sans-serif;
+    font-size: 25px;
+    margin-left: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.section-app-list-tile {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 0;
+    gap: 15px;
+    margin-bottom: 15px;
+
+}
+
+.section-app-list-items {
+    list-style: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: "Roboto Mono", monospace;
+}
+
+
+
+/* <h2 class= "title decor"> 
+    ::Before
+    "Sobre "
+    <Span> nós <span>
+    </h2>
+*/
+
+/*
+.title-decor {
+    position: relative;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: #555555;
+}
+
+.title-decor span {
+    color: blue;
+}
+
+.title-decor:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 4px;
+    background-color: red;
+}
+*/
