@@ -9,165 +9,349 @@ Desktop: 992px até 1200px
 Telas Grandes: acima de 1200px
 -----------------------------
 */
-@media screen and (min-width: 768px) and (max-width: 992px) {
-    .header {
-        justify-content: space-between;
-    }
+:root {
+    --cor01: #b80000;
+    --cor02: #112128;
+    --cor03: #fdf7fa;
+    --cor04: #151515;
+    --cor05: #141414;
 
-    .img-menu {
-        display: none;
-    }
+    --title: "Madimi One", sans-serif;
+    --text:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --list: "Roboto Mono", monospace;
+}
 
-    .header-menu {
+@media (max-width: 600px){
+    nav ul{
+        position: absolute;
+        top: 110px;
+        left: 0;
+        right: 0;
         display: flex;
-        margin-right: 50px;
-        gap: 40px;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--cor05);
     }
 
-    .section-sobre-img-title {
-        font-size: 40px;
+    nav ul li{
+        padding: 8px;    
     }
 
-    .div-unidades-text-items {
-        height: 35vh;
+    .menu-icon{
+        display: block;
     }
 
-    .div-unidades-items {
-        gap: 30px;
-    }
-
-    .section-app-img {
-        width: 30vw;
-    }
-
-    .section-app-text-title {
-        font-size: 20px;
-    }
-
-    .section-app-list-items {
-        font-size: 15px;
-        padding: 5px;
-        list-style: disc inside;
-    }
-
-    .footer {
-        padding: 5px;
-    }
-
-    .footer-title {
-        font-size: 25px;
-    }
-
-    .header-menu-item {
-        font-size: 18px;
-    }
-
-    .text-decoration-contato {
-        background-color: var(--cor01);
-        border: 10px solid var(--cor01);
-        border-radius: 20px 0px 20px 20px;
-    }
-
-    .img-logo {
-        height: 90px;
-        margin-left: 50px;
-    }
-
-    .img-menu {
-        height: 40px;
+    .footerNav ul{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 }
 
-@media screen and (min-width: 992px) {
-    .header {
-        justify-content: space-between;
+@media screen and (min-width: 600px) and (max-width: 992px) {
+    .logo img {
+        height: 85px;
     }
 
-    .img-menu {
-        display: none;
-    }
-
-    .header-menu {
-        display: flex;
-        margin-right: 50px;
-        gap: 40px;
-    }
-
-    .section-sobre-img-title {
-        font-size: 70px;
-    }
-
-    .header-menu-item {
-        font-size: 18px;
-    }
-
-    .text-decoration-contato {
+    .contato{
         background-color: var(--cor01);
         border: 10px solid var(--cor01);
+        color: var(--cor03);
         border-radius: 20px 0px 20px 20px;
     }
+    
+    nav a{
+        font-size: 25px;  
+    }
 
-    .img-logo {
+    .wrapper h2{
+        font-size: 45px;
+    }
+
+    .sobre-p{
+        font-size: 16px
+    }
+
+    .wrapper-unidades {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .container {
+        display: flex;
+        height: 300px;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    
+    .card {
+        width: 70px;
+        border-radius: 12px;
+        background-size: cover;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 32px;
+        margin: 0 10px;
+        display: flex;
+        align-items: flex-end;
+        transition: .6s cubic-bezier(.28, -0.03, 0, .99);
+        box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+    }
+    
+    .card>.row {
+        color: white;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    
+    .card>.row>.icon {
+        background-color: #223;
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+    }
+    
+    .card>.row>.description {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+        height: 80px;
+        width: 500px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition-delay: .3s;
+        transition: all .3s ease;
+    }
+    
+    .description p {
+        color: #b0b0ba;
+        padding-top: 5px;
+    }
+    
+    .description h2 {
+        text-transform: uppercase;
+    }
+    
+    input {
+        display: none;
+    }
+    
+    input:checked+label {
+        width: 450px;
+    }
+    
+    input:checked+label .description {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    
+    .card[for="c01"] {
+        background-image: url(../imgs/a-matriz.jpg);
+        background-position: center;
+    }
+    
+    .card[for="c02"] {
+        background-image: url(../imgs/filial01.jpg);
+        background-position: center;
+    }
+    
+    .card[for="c03"] {
+        background-image: url(../imgs/filial02.jpg);
+        background-position: center;
+    }
+    
+    .card[for="c04"] {
+        background-image: url(../imgs/fIlial03.jpg);
+        background-position: center;
+    }
+    
+    .card[for="c05"] {
+        background-image: url(../imgs/filial04.jpg);
+        background-position: center;
+    }
+
+    .div-app-list{
+        border: 2px solid var(--cor01);
+    }
+
+    .aplicativo button{
+        width: 150px;
+        padding: 10px 24px;
+    }
+
+    .app-img {
+        display: block;
+        width: 15vw;
+    }
+    
+}
+
+@media screen and (min-width: 992px) {
+    .logo img {
         height: 90px;
-        margin-left: 50px;
     }
 
-    .img-menu {
-        height: 40px;
+    .contato{
+        background-color: var(--cor01);
+        border: 10px solid var(--cor01);
+        color: var(--cor03);
+        border-radius: 20px 0px 20px 20px;
+    }
+    nav a{
+        font-size: 25px;  
     }
 
-    .section-app {
+    .wrapper h2{
+        font-size: 48px;
+    }
+
+    .sobre-p{
+        font-size: 18px
+    }
+
+    .wrapper-unidades {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .container {
+        display: flex;
+        height: 400px;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    
+    .card {
+        width: 70px;
+        border-radius: 12px;
+        background-size: cover;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 32px;
+        margin: 0 10px;
+        display: flex;
+        align-items: flex-end;
+        transition: .6s cubic-bezier(.28, -0.03, 0, .99);
+        box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+    }
+    
+    .card>.row {
+        color: white;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    
+    .card>.row>.icon {
+        background-color: #223;
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+    }
+    
+    .card>.row>.description {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+        height: 80px;
+        width: 500px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition-delay: .3s;
+        transition: all .3s ease;
+    }
+    
+    .description p {
+        color: #b0b0ba;
+        padding-top: 5px;
+    }
+    
+    .description h2 {
+        text-transform: uppercase;
+    }
+    
+    input {
+        display: none;
+    }
+    
+    input:checked+label {
+        width: 450px;
+    }
+    
+    input:checked+label .description {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    
+    .card[for="c01"] {
+        background-image: url(../imgs/a-matriz.jpg);
+        background-position: center;
+    }
+    
+    .card[for="c02"] {
+        background-image: url(../imgs/filial01.jpg);
+        background-position: center;
+    }
+    
+    .card[for="c03"] {
+        background-image: url(../imgs/filial02.jpg);
+        background-position: center;
+    }
+    
+    .card[for="c04"] {
+        background-image: url(../imgs/fIlial03.jpg);
+        background-position: center;
+    }
+    
+    .card[for="c05"] {
+        background-image: url(../imgs/filial04.jpg);
+        background-position: center;
+    }
+
+    .aplicativo {
         padding: 5px;
-        margin-top: 10px;
+        margin: 25px 35px;
         border: 4px solid var(--cor01);
     }
-
-    .section-app-img {
-        width: 32vw;
+    
+    .app-img {
+        display: block;
+        width: 25vw;
     }
-
-    .div-app {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 32px;
-    }
-
+    
     .div-app-list {
-        border: 3px solid var(--cor01);
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
+        border: 2px solid var(--cor01);
+        padding: 32px;
+    }
+    
+    .app-title {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: var(--title);
+        font-size: 32px;
+    }
+    
+    .app-items {
+        font-family: var(--list);
+        font-size: 20px;
+        padding: 2px;
+        list-style: none;
+    }
+
+    .aplicativo button{
+        gap: 10px;
+        width: 200px;
         padding: 20px;
-    }
-
-    .section-app-text-title {
-        font-size: 30px;
-    }
-
-    .section-app-list-items {
-        font-family: "Roboto Mono", monospace;
-        font-size: 20px;
-        padding: 10px;
-        list-style: disc inside;
-    }
-
-    .section-app-img {
-        width: 30vw;
-    }
-
-
-    .footer {
-        padding: 10px;
-    }
-
-    .footer-title {
-        font-size: 30px;
-    }
-
-    .div-form {
-        font-size: 20px;
     }
 }
