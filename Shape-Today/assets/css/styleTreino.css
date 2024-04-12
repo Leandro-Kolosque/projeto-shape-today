@@ -1,0 +1,122 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Madimi+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    --cor01: #b80000;
+    --cor02: #112128;
+    --cor03: #fdf7fa;
+    --cor04: #151515;
+    --cor05: #141414;
+
+    --index: calc(1vw + 1vh);
+    --transition: cubic-bezier(.1, .7, 0, 1);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+ 
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: var(--cor04);
+}
+
+.img-logo {
+    height: 75px;
+    margin-left: 40px;
+}
+
+.img-menu {
+    height: 35px;
+    background-color: var(--cor01);
+    border: 10px solid var(--cor01);
+    border-radius: 20px 0px 20px 20px;
+}
+
+.img-menu:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.header-menu {
+    margin-right: 100px;
+    display: flex;
+    gap: 50px;
+}
+
+.header-menu-item {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--cor03);
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.header-menu-item:hover {
+    font-weight: bolder;
+}
+
+    body{
+        color: white;
+        background-image: url(../imgs/fundo_academiaEscuro.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+    }
+    section.SAUDE_GERAL{
+        top :5%;
+        left :80%;
+        transform: translate(-50%,50%);
+        position: absolute;
+    
+    }
+    section.PERDER_PESO{
+        top :5%;
+        left :50%;
+        transform: translate(-50%,50%);
+        position: absolute;
+    
+    }
+    section.SHAPE_TODAY{
+        top :5%;
+        left :20%;
+        transform: translate(-50%,50%);
+        position: absolute;
+    
+}
+
+section.SHAPE_TODAY{
+    background-image: url(../imgs/Levantando_Barra.jpg);
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 400px;
+    -size: cover;
+    background-position: center;
+}
+
+section.PERDER_PESO{
+    background-image: url(../imgs/Corrida_Esteira.jpg);
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+section.SAUDE_GERAL{
+    background-image: url(../imgs/Mulher_Alongando.jpg);
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
