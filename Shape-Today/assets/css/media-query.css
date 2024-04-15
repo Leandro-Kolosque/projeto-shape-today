@@ -46,6 +46,24 @@ Telas Grandes: acima de 1200px
         align-items: center;
         gap: 10px;
     }
+
+    .container{
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;   
+    }
+
+    .description p {
+       font-size: 12px;
+    }
+    
+    .description h2 {
+        font-size: 14px;
+    }
+
+    input:checked+label {
+        width: 350px;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 992px) {
@@ -213,110 +231,6 @@ Telas Grandes: acima de 1200px
 
     .sobre-p{
         font-size: 18px
-    }
-
-    .wrapper-unidades {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .container {
-        display: flex;
-        height: 400px;
-        flex-wrap: wrap;
-        justify-content: start;
-    }
-    
-    .card {
-        width: 70px;
-        border-radius: 12px;
-        background-size: cover;
-        cursor: pointer;
-        overflow: hidden;
-        border-radius: 32px;
-        margin: 0 10px;
-        display: flex;
-        align-items: flex-end;
-        transition: .6s cubic-bezier(.28, -0.03, 0, .99);
-        box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
-    }
-    
-    .card>.row {
-        color: white;
-        display: flex;
-        flex-wrap: nowrap;
-    }
-    
-    .card>.row>.icon {
-        background-color: #223;
-        color: white;
-        border-radius: 50%;
-        width: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 15px;
-    }
-    
-    .card>.row>.description {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        overflow: hidden;
-        height: 80px;
-        width: 500px;
-        opacity: 0;
-        transform: translateY(30px);
-        transition-delay: .3s;
-        transition: all .3s ease;
-    }
-    
-    .description p {
-        color: #b0b0ba;
-        padding-top: 5px;
-    }
-    
-    .description h2 {
-        text-transform: uppercase;
-    }
-    
-    input {
-        display: none;
-    }
-    
-    input:checked+label {
-        width: 450px;
-    }
-    
-    input:checked+label .description {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-    }
-    
-    .card[for="c01"] {
-        background-image: url(../imgs/a-matriz.jpg);
-        background-position: center;
-    }
-    
-    .card[for="c02"] {
-        background-image: url(../imgs/filial01.jpg);
-        background-position: center;
-    }
-    
-    .card[for="c03"] {
-        background-image: url(../imgs/filial02.jpg);
-        background-position: center;
-    }
-    
-    .card[for="c04"] {
-        background-image: url(../imgs/fIlial03.jpg);
-        background-position: center;
-    }
-    
-    .card[for="c05"] {
-        background-image: url(../imgs/filial04.jpg);
-        background-position: center;
     }
 
     .aplicativo {
