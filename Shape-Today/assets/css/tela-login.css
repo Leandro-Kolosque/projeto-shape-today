@@ -1,0 +1,196 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Madimi+One&display=swap');
+
+:root {
+    --cor01: #b80000;
+    --cor02: #112128;
+    --cor03: #fdf7fa;
+    --cor04: #151515;
+    --cor05: #141414;
+
+    --title: "Madimi One", sans-serif;
+    --text:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --list: "Roboto Mono", monospace;
+
+    --color-light-50: snow;
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: var(--text)
+}
+
+body,
+html {
+    background-color: var(--cor01);
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+section#login {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--cor04);
+    width: 250px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px black;
+    transition: width .3s, height .3s;
+    transition-timing-function: ease;
+    transform: translate(-50%, -50%);
+}
+
+section#login>div#imagem {
+    background: var(--cor01) url(../imgs/pexels-pixabay-260352.jpg) no-repeat;
+    height: 200px;
+    background-size: cover;
+    background-position: right top;
+    display: block;
+}
+
+
+#login_form {
+    background-color: var(--color-light-50);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    gap: 8px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+    height: fit-content;
+    animation: dark-to-light 0.3s ease-in-out;
+}
+
+#form_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#form_header h1 {
+    font-size: 25px;
+    position: relative;
+    font-family: var(--text)
+}
+
+#form_header h1::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    background-color: var(--cor01);
+    height: 3px;
+    bottom: 5px;
+    border-radius: 5px;
+}
+
+#moon_icon {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input-box label {
+    font-size: 12px;
+    color: var(--color-dark-50);
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 3px;
+    cursor: text;
+    border-bottom: 1px solid var(--cor01);
+}
+
+.input-field i {
+    font-size: 16px;
+    color: var(--color-dark-900);
+}
+
+.input-field input {
+    border: none;
+    background-color: transparent;
+    width: 200px;
+    font-size: 14px;
+    padding: 0px 5px;
+}
+
+.input-field input:focus {
+    outline: none;
+}
+
+#forgot_password a {
+    text-decoration: none;
+    font-size: 15px;
+    color: var(--color-dark-50);
+}
+
+#forgot_password a:hover {
+    color: var(--cor01);
+}
+
+#login_button {
+    border: none;
+    background-color: var(--cor01);
+    color: var(--color-light-50);
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#login_button:hover {
+    transform: scale(1.05);
+}
+
+.dark#login_form{
+    color: var(--color-light-50);
+    background-color: var(--color-dark-100);
+    animation: light-to-dark 0.3s ease-in-out;
+}
+
+.dark#login_form .input-field input, .dark#login_form .input-field i{
+    color: var(--color-light-50);
+}
+
+@keyframes dark-to-light{
+    0% {
+        background-color: var(--color-dark-100);
+    }
+
+    100% {
+        background-color: var(--color-light-50);
+    }
+}
+
+@keyframes light-to-dark{
+    0% {
+        background-color: var(--color-light-50);
+    }
+
+    100% {
+        background-color: var(--color-dark-100);
+    }
+}
