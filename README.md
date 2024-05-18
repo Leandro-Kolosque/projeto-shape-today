@@ -27,13 +27,13 @@ Logo abaixo está sendo exibido o layout da Landing page do site.
 
 ## AUTORES
 Diogo Dias Pimentel <br>
-linkedin : <https://www.linkedin.com/in/diogodiaspimentel-1d81n3970>
+linkedIN : <https://www.linkedin.com/in/diogodiaspimentel-1d81n3970>
 
 Eduardo Bussadori Leite <br>
-Linkedin : <https://www.linkedin.com/in/eduardo-leite-746352274/>
+LinkedIN : <https://www.linkedin.com/in/eduardo-leite-746352274/>
 
 Leandro Wirgert Kolosque <br>
-Linkedin : <https://www.linkedin.com/in/leandro-kolosque-4484592b8/>
+LinkedIN : <https://www.linkedin.com/in/leandro-kolosque-4484592b8/>
 
 Matheus Guimaraes <br>
 Linkedin : <https://www.linkedin.com/in/matheus-guimaraes-247135293/>
