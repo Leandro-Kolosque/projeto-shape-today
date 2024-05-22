@@ -11,7 +11,7 @@ alem de englobar os conceitos de: como estruturar um layout, tecnicas de CSS3 co
 Logo abaixo está sendo exibido o layout da Landing page do site.
 
 <div >
- <img src="https://media.discordapp.net/attachments/674057114506756102/1226090241400770560/image.png?ex=66491345&is=6647c1c5&hm=b2b3c2b23e328ae30615ad61a711ca17e662bfd3af7e2d095af727c2c07ce995&=&format=webp&quality=lossless&width=1366&height=670" </img>
+ <img src="https://media.discordapp.net/attachments/674057114506756102/1226090241400770560/image.png?ex=664f0205&is=664db085&hm=f903970c1179d1cc3f055bb5017f92dc5c79336464655c19da3c10209705d6bf&=&format=webp&quality=lossless&width=1400&height=670" </img>
   <img src="https://media.discordapp.net/attachments/674057114506756102/1226090470804029492/image.png?ex=6649137b&is=6647c1fb&hm=f1329b483573270d8608e43fe52f90820711b74a0a0c7a7b0b68a2e0c3bbfded&=&format=webp&quality=lossless&width=1432&height=670" </img>
   <img src = "https://media.discordapp.net/attachments/674057114506756102/1226090584788439050/image.png?ex=66491397&is=6647c217&hm=39b4fc6f959cccd7f2bedc8d51d4b1b40f8aeed6f6b9283149ac68276a9d5316&=&format=webp&quality=lossless&width=1378&height=670" </img>
 </div>
@@ -19,11 +19,16 @@ Logo abaixo está sendo exibido o layout da Landing page do site.
 ## TECNOLOGIAS UTILIZADAS
 *  <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"> HTML
  
-*   <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"> CSS
+*  <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"> CSS
+  
+*  <img align="center" alt="Ts" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" /> TYPESCRIPT 
 
 *  <img align="center" alt="Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg"> JAVASCRIPT
 
 *  <img align="center" alt="NodeJs" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" /> NODE.JS
+
+
+          
 
 ## AUTORES
 Diogo Dias Pimentel <br>
