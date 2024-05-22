@@ -1,24 +1,25 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'; // foi incluida importação de ManyToOne
-import { Filiacao } from './filiacao.entity'; // esta linha foi adicionada
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'; 
+import { Filiacao } from './filiacao.entity';
+import { ProjetoDocumentoUser } from 'src/documento/entity/projeto_documento_user.entity';
+
 
 @Entity('user')
 export class User {
-    @PrimaryGeneratedColumn()
-    id_user: number;
+  @PrimaryGeneratedColumn()
+  id_user: number;
 
-    @Column({ length: 40 })
-    nome: string;
+  @Column({ length: 40 })
+  nome: string;
 
-    @Column({ unique: true, length: 40 })
-    email: string;
+  @Column({ unique: true, length: 40 })
+  email: string;
 
-    @Column()
-    senha: string;
+  @Column({ length: 60})
+  senha: string;
 
-    @Column({ unique: true, length: 15 })
-    cpf: string;
+  @OneToMany(() => Filiacao, (filiacao) => filiacao.user) 
+  filiacoes: Filiacao[]; 
 
-    @OneToMany(() => Filiacao, filiacao => filiacao.user) // esta linha foi adicionada
-    filiacoes: Filiacao[];                                // esta linha foi adicionada
-
+  @OneToMany(() => ProjetoDocumentoUser, pd => pd.user)
+  projetoDocumentoUsers: ProjetoDocumentoUser[];
 }

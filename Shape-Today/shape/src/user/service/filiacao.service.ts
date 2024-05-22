@@ -1,4 +1,3 @@
-
 import { User } from "./../entity/user.entity";
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
@@ -18,7 +17,7 @@ export class FiliacaoService {
   async create(createFiliacaoDto: CreateFiliacaoDto): Promise<Filiacao> {
     const user = await this.userService.findOne(createFiliacaoDto.userId);
     if (!user) {
-      throw new NotFoundException('Usuário não encontrado.');
+      throw new NotFoundException(`Usuário não encontrado.`);
     }
     const newFiliacao = this.filiacaoRepository.create({
       ...createFiliacaoDto,
@@ -37,7 +36,7 @@ export class FiliacaoService {
       relations: ["user"],
     });
     if (!filiacao) {
-      throw new NotFoundException('Filiação não encontrada.');
+      throw new NotFoundException(`Filiação não encontrada.`);
     }
     return filiacao;
   }
