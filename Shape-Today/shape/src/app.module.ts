@@ -8,7 +8,6 @@ import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { TreinoModule } from './treino/treino.module';
-import { DttreinoModule } from './dttreino/dttreino.module';
 import { MaquinaModule } from './maquina/maquina.module';
 
 
@@ -19,7 +18,6 @@ import { MaquinaModule } from './maquina/maquina.module';
     TypeOrmModule.forFeature([User, Filiacao]),
     AuthModule,
     TreinoModule,
-    DttreinoModule,
     MaquinaModule
   ],
   controllers: [AppController],
