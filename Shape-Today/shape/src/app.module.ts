@@ -7,6 +7,9 @@ import { Filiacao } from './user/entity/filiacao.entity';
 import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
+import { TreinoModule } from './treino/treino.module';
+import { DttreinoModule } from './dttreino/dttreino.module';
+import { MaquinaModule } from './maquina/maquina.module';
 
 
 @Module({
@@ -14,7 +17,10 @@ import { AuthModule } from './auth/auth.module';
     DatabaseModule,
     UserModule,
     TypeOrmModule.forFeature([User, Filiacao]),
-    AuthModule
+    AuthModule,
+    TreinoModule,
+    DttreinoModule,
+    MaquinaModule
   ],
   controllers: [AppController],
   providers: [AppService],
