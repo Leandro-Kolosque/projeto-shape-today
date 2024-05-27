@@ -194,3 +194,75 @@ section#login>div#imagem {
         background-color: var(--color-dark-100);
     }
 }
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    body {
+        background-image: linear-gradient(to bottom, var(--cor01), #4e2128);
+    }
+
+    section#login {
+        width: 80vw;
+        height: 300px;
+
+    }
+
+    section#login>div#imagem {
+        float: left;
+        width: 30%;
+        height: 100%;
+    }
+    
+    #form_header h1 {
+        font-size: 28px;
+    }
+    
+    #moon_icon {
+        font-size: 25px;
+    }
+
+    .input-field i {
+        font-size: 16px;
+    }
+    
+    .input-field input {
+        width: 300px;
+    }
+    
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        background-image: linear-gradient(to bottom, var(--cor01), #4e2128);
+    }
+
+    section#login {
+        width: 950px;
+        height: 350px;
+    }
+
+    section#login>div#imagem {
+        float: left;
+        width: 45%;
+        height: 100%;
+    }
+
+    #inputs{
+        gap: 20px;
+    }
+    #form_header h1 {
+        font-size: 32px;
+    }
+    
+    #moon_icon {
+        font-size: 28px;
+    }
+
+    .input-field i {
+        font-size: 18px;
+    }
+    
+    .input-field input {
+        width: 350px;
+        gap: 30px
+    }
+}

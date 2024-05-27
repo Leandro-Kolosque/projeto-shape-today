@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Madimi+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Madimi+One&display=swap');
 
 :root {
     --cor01: #b80000;
@@ -10,113 +10,222 @@
     --cor04: #151515;
     --cor05: #141414;
 
-    --index: calc(1vw + 1vh);
-    --transition: cubic-bezier(.1, .7, 0, 1);
+    --title: "Madimi One", sans-serif;
+    --text:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --list: "Roboto Mono", monospace;
+
+    --color-light-50: snow;
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
 }
 
 * {
-    margin: 0px;
     padding: 0px;
-}
- 
-.header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px;
-    background-color: var(--cor04);
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: var(--text)
 }
 
-.img-logo {
-    height: 75px;
-    margin-left: 40px;
-}
-
-.img-menu {
-    height: 35px;
+body,
+html {
     background-color: var(--cor01);
-    border: 10px solid var(--cor01);
-    border-radius: 20px 0px 20px 20px;
+    height: 100vh;
+    width: 100vw;
 }
 
-.img-menu:hover {
-    cursor: pointer;
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
 }
 
-.header-menu {
-    margin-right: 100px;
+section#treino {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--cor04);
+    width: 250px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px black;
+    transition: width .3s, height .3s;
+    transition-timing-function: ease;
+    transform: translate(-50%, -50%);
+}
+
+section#treino>div#imagem {
+    background: var(--cor01) url(../imgs/pexels-pixabay-260352.jpg) no-repeat;
+    height: 200px;
+    background-size: cover;
+    background-position: right top;
+    display: block;
+}
+
+
+#treino_container {
+    background-color: var(--color-light-50);
     display: flex;
-    gap: 50px;
+    flex-direction: column;
+    padding: 30px 40px;
+    gap: 8px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+    height: fit-content;
+    animation: dark-to-light 0.3s ease-in-out;
 }
 
-.header-menu-item {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: var(--cor03);
-    font-weight: 400;
-    font-size: 12px;
+#treino_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#treino_header h1 {
+    font-size: 25px;
+    position: relative;
+    font-family: var(--text)
+}
+
+#treino_header h1::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    background-color: var(--cor01);
+    height: 3px;
+    bottom: 5px;
+    border-radius: 5px;
+}
+
+#moon_icon {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.dark#treino_container{
+    color: var(--color-light-50);
+    background-color: var(--color-dark-100);
+    animation: light-to-dark 0.3s ease-in-out;
+}
+
+#opc_treinos h2{
+    font-family: var(--title);
+}
+
+.treino-button{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: left;
+   gap: 20px;
+}
+
+#opc_treinos a{
     text-decoration: none;
 }
 
-.header-menu-item:hover {
-    font-weight: bolder;
+#trn-button {
+    width: 150px;
+    border: none;
+    background-color: var(--cor01);
+    color: var(--color-light-50);
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-    body{
-        color: white;
-        background-image: url(../imgs/fundo_academiaEscuro.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-    
+#trn-button:hover {
+    transform: scale(1.05);
+}
+
+
+
+@keyframes dark-to-light{
+    0% {
+        background-color: var(--color-dark-100);
     }
-    section.SAUDE_GERAL{
-        top :5%;
-        left :80%;
-        transform: translate(-50%,50%);
-        position: absolute;
-    
+
+    100% {
+        background-color: var(--color-light-50);
     }
-    section.PERDER_PESO{
-        top :5%;
-        left :50%;
-        transform: translate(-50%,50%);
-        position: absolute;
-    
+}
+
+@keyframes light-to-dark{
+    0% {
+        background-color: var(--color-light-50);
     }
-    section.SHAPE_TODAY{
-        top :5%;
-        left :20%;
-        transform: translate(-50%,50%);
-        position: absolute;
+
+    100% {
+        background-color: var(--color-dark-100);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    body {
+        background-image: linear-gradient(to bottom, var(--cor01), #4e2128);
+    }
+
+    section#treino {
+        width: 80vw;
+        height: 300px;
+
+    }
+
+    section#treino>div#imagem {
+        float: left;
+        width: 30%;
+        height: 100%;
+    }
     
+    #treino_header h1 {
+        font-size: 28px;
+    }
+    
+    #moon_icon {
+        font-size: 25px;
+    }
+    
+    .treino-button{
+        gap: 20px;
+     }
+    
+    #trn-button {
+        width: 250px;
+    }
 }
 
-section.SHAPE_TODAY{
-    background-image: url(../imgs/Levantando_Barra.jpg);
-    background-repeat: no-repeat;
-    height: 400px;
-    width: 400px;
-    -size: cover;
-    background-position: center;
-}
+@media screen and (min-width: 992px) {
+    body {
+        background-image: linear-gradient(to bottom, var(--cor01), #4e2128);
+    }
 
-section.PERDER_PESO{
-    background-image: url(../imgs/Corrida_Esteira.jpg);
-    background-repeat: no-repeat;
-    height: 400px;
-    width: 400px;
-    background-size: cover;
-    background-position: center;
-}
+    section#treino {
+        width: 950px;
+        height: 350px;
+    }
 
-section.SAUDE_GERAL{
-    background-image: url(../imgs/Mulher_Alongando.jpg);
-    background-repeat: no-repeat;
-    height: 400px;
-    width: 400px;
-    background-size: cover;
-    background-position: center;
+    section#treino>div#imagem {
+        float: left;
+        width: 45%;
+        height: 100%;
+    }
+
+    #treino_header h1 {
+        font-size: 32px;
+    }
+    
+    #moon_icon {
+        font-size: 28px;
+    }
+
+    .treino-button{
+        gap: 32px;
+     }
+    
+    #trn-button {
+        width: 350px;
+    }
+
 }
 
