@@ -9,42 +9,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.User = void 0;
+exports.Treino = void 0;
 const typeorm_1 = require("typeorm");
-const filiacao_entity_1 = require("./filiacao.entity");
-const treino_entity_1 = require("./treino.entity");
-let User = class User {
+const user_entity_1 = require("./user.entity");
+let Treino = class Treino {
 };
-exports.User = User;
+exports.Treino = Treino;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], User.prototype, "id_user", void 0);
+], Treino.prototype, "id_perfil", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 40 }),
+    (0, typeorm_1.Column)({ length: 10 }),
     __metadata("design:type", String)
-], User.prototype, "nome", void 0);
+], Treino.prototype, "codigo", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ unique: true, length: 40 }),
+    (0, typeorm_1.Column)({ length: 10 }),
     __metadata("design:type", String)
-], User.prototype, "email", void 0);
+], Treino.prototype, "carga", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 60 }),
+    (0, typeorm_1.Column)({ length: 10 }),
     __metadata("design:type", String)
-], User.prototype, "senha", void 0);
+], Treino.prototype, "serie", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 14 }),
+    (0, typeorm_1.Column)({ length: 10 }),
     __metadata("design:type", String)
-], User.prototype, "cpf", void 0);
+], Treino.prototype, "repeticao", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => filiacao_entity_1.Filiacao, (filiacao) => filiacao.user),
-    __metadata("design:type", Array)
-], User.prototype, "filiacoes", void 0);
-__decorate([
-    (0, typeorm_1.OneToMany)(() => treino_entity_1.Treino, treino => treino.user),
-    __metadata("design:type", Array)
-], User.prototype, "treinos", void 0);
-exports.User = User = __decorate([
-    (0, typeorm_1.Entity)('user')
-], User);
-//# sourceMappingURL=user.entity.js.map
+    (0, typeorm_1.ManyToOne)(() => user_entity_1.User, user => user.treinos),
+    __metadata("design:type", user_entity_1.User)
+], Treino.prototype, "user", void 0);
+exports.Treino = Treino = __decorate([
+    (0, typeorm_1.Entity)('treino')
+], Treino);
+//# sourceMappingURL=treino.entity.js.map

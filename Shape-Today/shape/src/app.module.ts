@@ -7,18 +7,15 @@ import { Filiacao } from './user/entity/filiacao.entity';
 import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
-import { TreinoModule } from './treino/treino.module';
-import { MaquinaModule } from './maquina/maquina.module';
+import { Treino } from './user/entity/treino.entity';
 
 
 @Module({
   imports: [
     DatabaseModule,
     UserModule,
-    TypeOrmModule.forFeature([User, Filiacao]),
+    TypeOrmModule.forFeature([User, Filiacao, Treino]),
     AuthModule,
-    TreinoModule,
-    MaquinaModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,5 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm'; // foi incluida importação de ManyToOne
-import { User } from './user.entity'; // esta linha foi adicionada
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { User } from './user.entity';
 
 @Entity('filiacao')
 export class Filiacao {
@@ -21,6 +21,6 @@ export class Filiacao {
   @Column({ length: 2 })
   uf: string;
 
-  @ManyToOne(() => User, (user) => user.filiacoes) // esta linha foi adicionada
-  user: User; // esta linha foi adicionada
+  @ManyToOne(() => User, (user) => user.filiacoes)
+  user: User;
 }
