@@ -1,0 +1,222 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Madimi+One&display=swap');
+
+:root {
+    --cor01: #b80000;
+    --cor02: #112128;
+    --cor03: #fdf7fa;
+    --cor04: #151515;
+    --cor05: #141414;
+
+    --title: "Madimi One", sans-serif;
+    --text:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --list: "Roboto Mono", monospace;
+
+    --color-light-50: snow;
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: var(--list);
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, var(--cor01), #4e2128);
+}
+
+.container{
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+}
+
+.form-image{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    background-color: var(--cor02);
+}
+
+.form-image img{
+    width: 500px;
+}
+
+.form{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--color-light-50);
+    padding: 48px;
+}
+
+.form-header{
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.login-button{
+    display: flex;
+    align-items: center;
+}
+
+.login-button button{
+    border: none;
+    background-color: var(--cor01);
+    padding: 6px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button button:hover{
+    transform: scale(1.05);
+}
+
+.login-button a{
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--cor03);
+}
+
+.form-header h1:after{
+    content: ' ';
+    display: block;
+    width: 80px;
+    height: 5px;
+    background-color: var(--cor01);
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.input-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.input-box input{
+    margin: 10px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+}
+
+.input-box label, .gender-title h6{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.gender-group{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 0px 8px;
+}
+
+.gender-input{
+    display: flex;
+    align-items: center;
+}
+
+.gender-input input{
+    margin-right: 6px;
+}
+
+.gender-input label{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.continue-button button{
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    background-color: var(--cor01);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.continue-button button:hover{
+    transform: scale(1.05);
+}
+
+.continue-button button a{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--cor03);
+}
+
+.dark#form{
+    color: var(--color-light-50);
+    background-color: var(--color-dark-100);
+}
+
+@media screen and (max-width:1330px) {
+    .form-image{
+        display: none;
+    }
+
+    .container{
+        width: 50%;
+    }
+    
+    .form{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1060px){
+    .container{
+        width: 90%;
+        height: auto;
+    }
+
+    .input-group{
+        flex-direction: column;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        max-height: 160px;
+        padding-right: 80px;
+    }
+
+    .gender-input{
+        margin-top: 32px;
+    }
+
+    .gender-group{
+        flex-direction: column;
+    }
+
+    .gender-input{
+        margin-top: 8px;
+    }
+}
