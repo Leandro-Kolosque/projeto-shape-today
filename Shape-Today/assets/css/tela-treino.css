@@ -117,7 +117,7 @@ section#treino>div#imagem {
    flex-direction: column;
    flex-wrap: wrap;
    justify-content: left;
-   gap: 20px;
+   gap: 8px;
 }
 
 #opc_treinos a{
@@ -187,11 +187,11 @@ section#treino>div#imagem {
     }
     
     .treino-button{
-        gap: 20px;
+        gap: 12px;
      }
     
     #trn-button {
-        width: 250px;
+        width: 275px;
     }
 }
 
@@ -207,7 +207,7 @@ section#treino>div#imagem {
 
     section#treino>div#imagem {
         float: left;
-        width: 45%;
+        width: 40%;
         height: 100%;
     }
 
@@ -220,7 +220,7 @@ section#treino>div#imagem {
     }
 
     .treino-button{
-        gap: 32px;
+        gap: 20px;
      }
     
     #trn-button {
