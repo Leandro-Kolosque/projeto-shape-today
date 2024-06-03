@@ -161,6 +161,11 @@ section#login>div#imagem {
     cursor: pointer;
 }
 
+#login_button a{
+    text-decoration: none;
+    color: var(--color-light-50);
+}
+
 #login_button:hover {
     transform: scale(1.05);
 }
