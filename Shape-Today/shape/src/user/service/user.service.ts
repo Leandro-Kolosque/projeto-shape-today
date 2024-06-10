@@ -41,8 +41,8 @@ export class UserService {
         throw new HttpException("Email já registrado.", HttpStatus.BAD_REQUEST);
       } else {
         throw new HttpException(
-          "Erro ao criar o registro. Tente novamente mais tarde.",
-          HttpStatus.INTERNAL_SERVER_ERROR
+          "Erro ao criar o registro. Tente novamente mais tarde." + error,
+          HttpStatus.INTERNAL_SERVER_ERROR 
         );
       }
     }

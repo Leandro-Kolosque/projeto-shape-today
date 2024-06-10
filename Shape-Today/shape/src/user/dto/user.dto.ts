@@ -23,6 +23,10 @@ export class CreateUserDto {
       "A senha deve ter pelo menos 8 caracteres, incluindo pelo menos: uma letra maiúscula, uma letra minúscula, um número e um caractere especial",
   })
   senha: string;
+
+  @ApiProperty({ description: "Cof", example: "2323232323" })
+  @IsString()
+  cpf: string;
 }
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {}

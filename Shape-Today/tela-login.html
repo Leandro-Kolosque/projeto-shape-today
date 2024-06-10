@@ -23,33 +23,22 @@
                     </div>
         
                     <div id="inputs">
-        
                         <div class="input-box">
-                            <label for="iname">
-                                Name
-                                <div class="input-field">
-                                    <i class="fa-solid fa-user"></i>
-                                    <input type="text" id="iname" name="name">
-                                </div>
-                            </label>
-                        </div>
-        
-                        <div class="input-box">
-                            <label for="iemail">
+                            <label for="email">
                                 E-mail
                                 <div class="input-field">
                                     <i class="fa-solid fa-envelope"></i>
-                                    <input type="email" id="iemail" name="email">
+                                    <input type="email" id="email" name="email">
                                 </div>
                             </label>
                         </div>
         
                         <div class="input-box">
-                            <label for="ipassword">
+                            <label for="senha">
                                 Password
                                 <div class="input-field">
                                     <i class="fa-solid fa-key"></i>
-                                    <input type="password" id="ipassword" name="password">
+                                    <input type="password" id="senha" name="senha">
                                 </div>
                             </label>
                             <div id="forgot_password">
@@ -60,7 +49,7 @@
                         </div>
                     </div>
         
-                    <button id="login_button">
+                    <button type="submit" id="login_button">
                         <a href="tela-treino.html">Login</a>
                     </button>
                 </form>
@@ -68,7 +57,39 @@
         </section>
     </main>
 
-    <script type="text/javascript" src="assets/js/tela-login.js"> </script>
+    <script type="text/javascript" src="assets/js/tela-login.js">
+        
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            try {
+                const response = await fetch('http://localhost:3001/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, senha })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Armazenar o token no localStorage
+                    console.log("jose ", response)
+                    localStorage.setItem('token', result.access_token);
+                    document.getElementById('response').innerText = 'Login successful!';
+                } else {
+                    document.getElementById('response').innerText = `Error: ${result.message}`;
+                }
+            } catch (error) {
+                document.getElementById('response').innerText = `Error: ${error.message}`;
+            }
+        });
+    </script>
+
 </body>
 
 </html>

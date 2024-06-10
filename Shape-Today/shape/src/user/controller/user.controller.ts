@@ -13,18 +13,18 @@ import { CreateUserDto, UpdateUserDto } from "../dto/user.dto";
 import { ApiTags, ApiOperation, ApiResponse } from "@nestjs/swagger";
 import { JwtAuthGuard } from "src/auth/guard/jwt-auth.guard.strategy";
 
-@UseGuards(JwtAuthGuard)
 @Controller("user")
 @ApiTags("user")
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) { }
 
   @ApiResponse({ status: 400, description: "Dados inválidos." })
   @Post()
   async create(@Body() createUserDto: CreateUserDto): Promise<any> {
     return this.userService.create(createUserDto);
   }
-  
+
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: "Listar todos os usuários" })
   @ApiResponse({
     status: 200,
@@ -36,6 +36,7 @@ export class UserController {
     return this.userService.findAll();
   }
 
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: "Obter um usuário pelo ID" })
   @ApiResponse({
     status: 200,
@@ -54,8 +55,9 @@ export class UserController {
     description: "Usuário criado com sucesso.",
     type: CreateUserDto,
   })
-  
 
+
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: "Atualizar um usuário pelo ID" })
   @ApiResponse({
     status: 200,
@@ -72,6 +74,7 @@ export class UserController {
     return this.userService.update(id, updateUserDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @ApiOperation({ summary: "Deletar um usuário pelo ID" })
   @ApiResponse({ status: 204, description: "Usuário deletado com sucesso." })
   @ApiResponse({ status: 404, description: "Usuário não encontrado." })
