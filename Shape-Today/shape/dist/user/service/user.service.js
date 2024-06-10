@@ -47,7 +47,7 @@ let UserService = class UserService {
                 throw new common_1.HttpException("Email já registrado.", common_1.HttpStatus.BAD_REQUEST);
             }
             else {
-                throw new common_1.HttpException("Erro ao criar o registro. Tente novamente mais tarde.", common_1.HttpStatus.INTERNAL_SERVER_ERROR);
+                throw new common_1.HttpException("Erro ao criar o registro. Tente novamente mais tarde." + error, common_1.HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
     }

@@ -39,6 +39,11 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], CreateUserDto.prototype, "senha", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ description: "Cof", example: "2323232323" }),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateUserDto.prototype, "cpf", void 0);
 class UpdateUserDto extends (0, mapped_types_1.PartialType)(CreateUserDto) {
 }
 exports.UpdateUserDto = UpdateUserDto;

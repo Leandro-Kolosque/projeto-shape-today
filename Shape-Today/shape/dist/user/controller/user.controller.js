@@ -48,6 +48,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "create", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_strategy_1.JwtAuthGuard),
     (0, swagger_1.ApiOperation)({ summary: "Listar todos os usuários" }),
     (0, swagger_1.ApiResponse)({
         status: 200,
@@ -60,6 +61,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "findAll", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_strategy_1.JwtAuthGuard),
     (0, swagger_1.ApiOperation)({ summary: "Obter um usuário pelo ID" }),
     (0, swagger_1.ApiResponse)({
         status: 200,
@@ -80,6 +82,7 @@ __decorate([
         description: "Usuário criado com sucesso.",
         type: user_dto_1.CreateUserDto,
     }),
+    (0, common_1.UseGuards)(jwt_auth_guard_strategy_1.JwtAuthGuard),
     (0, swagger_1.ApiOperation)({ summary: "Atualizar um usuário pelo ID" }),
     (0, swagger_1.ApiResponse)({
         status: 200,
@@ -96,6 +99,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "update", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_strategy_1.JwtAuthGuard),
     (0, swagger_1.ApiOperation)({ summary: "Deletar um usuário pelo ID" }),
     (0, swagger_1.ApiResponse)({ status: 204, description: "Usuário deletado com sucesso." }),
     (0, swagger_1.ApiResponse)({ status: 404, description: "Usuário não encontrado." }),
@@ -106,7 +110,6 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "delete", null);
 exports.UserController = UserController = __decorate([
-    (0, common_1.UseGuards)(jwt_auth_guard_strategy_1.JwtAuthGuard),
     (0, common_1.Controller)("user"),
     (0, swagger_1.ApiTags)("user"),
     __metadata("design:paramtypes", [user_service_1.UserService])
