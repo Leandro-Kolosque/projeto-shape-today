@@ -78,7 +78,6 @@
 
                 if (response.ok) {
                     // Armazenar o token no localStorage
-                    console.log("jose ", response)
                     localStorage.setItem('token', result.access_token);
                     document.getElementById('response').innerText = 'Login successful!';
                 } else {

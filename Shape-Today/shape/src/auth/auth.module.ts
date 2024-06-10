@@ -14,7 +14,7 @@ import { AuthService } from './service/auth.service';
   imports: [TypeOrmModule.forFeature([User]), 
     JwtModule.register({
       secret: process.env.JWT_SECRET, 
-      signOptions: { expiresIn: '1m' },
+      signOptions: { expiresIn: '15m' },
     }),
     UserModule,
     PassportModule,

@@ -24,7 +24,7 @@ export class CreateUserDto {
   })
   senha: string;
 
-  @ApiProperty({ description: "Cof", example: "2323232323" })
+  @ApiProperty({ description: "CPF", example: "11122233344" })
   @IsString()
   cpf: string;
 }

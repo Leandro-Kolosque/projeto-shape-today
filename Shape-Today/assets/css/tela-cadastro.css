@@ -180,7 +180,7 @@ body{
     background-color: var(--color-dark-100);
 }
 
-@media screen and (max-width:1330px) {
+@media screen and (max-width:1450px) {
     .form-image{
         display: none;
     }

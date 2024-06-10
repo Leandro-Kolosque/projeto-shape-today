@@ -40,7 +40,7 @@ __decorate([
     __metadata("design:type", String)
 ], CreateUserDto.prototype, "senha", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ description: "Cof", example: "2323232323" }),
+    (0, swagger_1.ApiProperty)({ description: "CPF", example: "11122233344" }),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateUserDto.prototype, "cpf", void 0);
