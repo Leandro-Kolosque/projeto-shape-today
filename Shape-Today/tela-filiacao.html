@@ -14,7 +14,7 @@
             <img src="assets/imgs/undraw_activity_tracker_re_2lvv.svg" alt="Imagem do Formulário">
         </div>
         <div class="form">
-            <form action="#">
+            <form id="filiacaoForm" action="#">
                 <div class="form-header">
                     <div class="title">
                         <h1>Filiação</h1>
@@ -52,10 +52,42 @@
 
                 </div>
                 <div class="continue-button">
-                    <button><a href="tela-login.html">Continuar</a></button>
+                    <button type="submit"><a href="tela-login.html">Continuar</a></button>
                 </div>
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('filiacaoForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const endereco = document.getElementById('iendereco').value;
+            const bairro = document.getElementById('ibairro').value;
+            const cidade = document.getElementById('icidade').value
+            const uf = document.getElementById('iestado').value
+
+            try {
+                const response = await fetch('http://localhost:3001/filiacao', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ endereco, bairro, cidade, uf })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Armazenar o token no localStorage
+                    document.getElementById('response').innerText = 'Cadastrado com sucesso!';
+                } else {
+                    document.getElementById('response').innerText = `Error: ${result.message}`;
+                }
+            } catch (error) {
+                document.getElementById('response').innerText = `Error: ${error.message}`;
+            }
+        });       
+    </script>
 </body>
 </html>

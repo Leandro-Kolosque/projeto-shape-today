@@ -14,7 +14,7 @@
             <img src="assets/imgs/undraw_activity_tracker_re_2lvv.svg" alt="">
         </div>
         <div class="form">
-            <form action="#">
+            <form id="cadastroForm">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastre-se</h1>
@@ -26,18 +26,18 @@
                 </div>
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="iname">Nome Completo</label>
-                        <input id="iname" type="text" name="name" placeholder="Digite seu nome" required>
+                        <label for="nome">Nome Completo</label>
+                        <input id="nome" type="text" name="nome" placeholder="Digite seu nome" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="icpf">CPF</label>
-                        <input id="icpf" type="text" name="cpf" placeholder="xxx-xxx-xxx-xx" required>
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text" name="cpf" placeholder="xxx-xxx-xxx-xx" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="iemail">E-mail</label>
-                        <input id="iemail" type="email" name="email" placeholder="Digite seu E-mail" required>
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu E-mail" required>
                     </div>
 
                     <div class="input-box">
@@ -46,8 +46,8 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="isen">Senha</label>
-                        <input id="isen" type="password" name="sen" placeholder="Digite sua senha" required>
+                        <label for="senha">Senha</label>
+                        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
                     </div>
 
                     <div class="input-box">
@@ -81,13 +81,44 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="tela-filiacao.html">Continuar</a></button>
+                    <button type="submit"><a href="tela-filiacao.html">Continuar</a></button>
                 </div>
             </form>
         </div>
     </div>
+    
 <script>
+    document.getElementById('cadastroForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
 
+        const nome = document.getElementById('nome').value
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
+        const cpf = document.getElementById('cpf').value
+
+        try {
+            const response = await fetch('http://localhost:3001/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nome, email, senha, cpf })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                // Armazenar o token no localStorage
+                document.getElementById('response').innerText = 'Cadastrado com sucesso';
+            } else {
+                document.getElementById('response').innerText = `Error: ${result.message}`;
+            }
+        } catch (error) {
+            document.getElementById('response').innerText = `Error: ${error.message}`;
+        }
+    });
+    
 </script>
+
 </body>
 </html>
