@@ -40,45 +40,14 @@
                         <input id="email" type="email" name="email" placeholder="Digite seu E-mail" required>
                     </div>
 
-                    <div class="input-box">
-                        <label for="icell">Celular</label>
-                        <input id="icell" type="number" name="cell" placeholder="(xx) xxxx-xxxx" required>
-                    </div>
 
                     <div class="input-box">
                         <label for="senha">Senha</label>
                         <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
                     </div>
 
-                    <div class="input-box">
-                        <label for="isen">Confirme sua senha</label>
-                        <input id="isen" type="password" name="confirmSen" placeholder="Confirme sua senha" required>
-                    </div>
-                </div>
 
-                <div class="gender-inputs">
-                    <div class="gender-title">
-                        <h6>Gênero</h6>
-                    </div>
 
-                    <div class="gender-group">
-                        <div class="gender-input">
-                            <input type="radio" name="gender" id="fem">
-                            <label for="fem">Feminino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input type="radio" name="gender" id="mas">
-                            <label for="mas">Masculino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input type="radio" name="gender" id="other">
-                            <label for="other">Outro</label>
-                        </div>
-
-                    </div>
-                </div>
 
                 <div class="continue-button">
                     <button type="submit"><a href="tela-filiacao.html">Continuar</a></button>
@@ -88,36 +57,36 @@
     </div>
     
 <script>
-    document.getElementById('cadastroForm').addEventListener('submit', async function(event) {
-        event.preventDefault();
+document.getElementById('cadastroForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-        const nome = document.getElementById('nome').value
-        const email = document.getElementById('email').value;
-        const senha = document.getElementById('senha').value;
-        const cpf = document.getElementById('cpf').value
+    const formData = {
+        nome: document.getElementById('nome').value,
+        cpf: document.getElementById('cpf').value,
+        email: document.getElementById('email').value,
+        senha: document.getElementById('senha').value,
+    };
 
-        try {
-            const response = await fetch('http://localhost:3001/user', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ nome, email, senha, cpf })
-            });
+    try {
+        const response = await fetch('http://localhost:3001/user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
 
-            const result = await response.json();
-
-            if (response.ok) {
-                // Armazenar o token no localStorage
-                document.getElementById('response').innerText = 'Cadastrado com sucesso';
-            } else {
-                document.getElementById('response').innerText = `Error: ${result.message}`;
-            }
-        } catch (error) {
-            document.getElementById('response').innerText = `Error: ${error.message}`;
+        if (response.ok) {
+            // Redireciona para a página de login ou mostra uma mensagem de sucesso
+            window.location.href = 'tela-filiacao.html';
+        } else {
+            const errorData = await response.json();
+            alert('Erro: ' + errorData.message);
         }
-    });
-    
+    } catch (error) {
+        alert('Erro: ' + error.message);
+    }
+});
 </script>
 
 </body>
