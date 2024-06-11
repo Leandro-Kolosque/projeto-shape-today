@@ -16,7 +16,7 @@
             <div id="imagem">
                 <!--Aqui vai a imagem na CSS -->
             </div>
-                <form id="login_form" action="">
+                <form id="login_form">
                     <div id="form_header">
                         <h1>Shape Today</h1>
                         <i id="moon_icon" class="fa-solid fa-moon"></i>
@@ -78,6 +78,7 @@
 
                 if (response.ok) {
                     // Armazenar o token no localStorage
+                    console.log("jose ", response)
                     localStorage.setItem('token', result.access_token);
                     document.getElementById('response').innerText = 'Login successful!';
                 } else {

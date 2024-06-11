@@ -232,6 +232,10 @@ section#login>div#imagem {
     .input-field input {
         width: 300px;
     }
+
+    #login_button {
+        padding: 3px;
+    }
     
 }
 
