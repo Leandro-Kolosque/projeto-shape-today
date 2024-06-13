@@ -19,8 +19,10 @@ mode.addEventListener('click', () => {
 
 document.getElementById('loadItems').addEventListener('click', async function() {
     const token = localStorage.getItem('token');
+    const itemsContainer = document.getElementById('items');
+
     if (!token) {
-        document.getElementById('items').innerText = 'No token found. Please log in first.';
+        itemsContainer.innerText = 'No token found. Please log in first.';
         return;
     }
 
@@ -43,15 +45,18 @@ document.getElementById('loadItems').addEventListener('click', async function() 
                         CPF: ${item.cpf}<br>
                         Email: ${item.email}
                     </li>
-                `; // Ajuste conforme a estrutura dos seus itens
+                `;
             });
             itemsList += '</ul>';
-            document.getElementById('items').innerHTML = itemsList;
+            itemsContainer.innerHTML = itemsList;
+
+            // Adiciona ou remove a classe para mostrar ou ocultar a barra de rolagem
+            itemsContainer.classList.toggle('show-scrollbar');
         } else {
             const result = await response.json();
-            document.getElementById('items').innerText = `Error: ${result.message}`;
+            itemsContainer.innerText = `Error: ${result.message}`;
         }
     } catch (error) {
-        document.getElementById('items').innerText = `Error: ${error.message}`;
+        itemsContainer.innerText = `Error: ${error.message}`;
     }
 });

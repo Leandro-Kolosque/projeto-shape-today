@@ -164,9 +164,14 @@ section#lista>div#imagem {
 }
 
 .items-list {
-    max-height: 110px; /* Define a altura máxima da lista */
-    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
-    padding-right: 10px; /* Adiciona um espaço para a barra de rolagem não sobrepor o conteúdo */
+    max-height: 0;
+    overflow-y: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.items-list.show-scrollbar {
+    max-height: 100px; /* Altura máxima da lista quando visível */
+    overflow-y: auto;
 }
 
 @keyframes dark-to-light{
