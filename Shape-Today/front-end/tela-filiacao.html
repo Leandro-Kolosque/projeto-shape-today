@@ -23,36 +23,42 @@
                 <div class="input-group">
 
                     <div class="input-box">
-                        <label for="inome">Nome</label>
-                        <input id="inome" type="text" name="nome" placeholder="EX: minha casa" required>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" minlength="8" maxlength="40" required>
                     </div>
                     
                     <div class="input-box">
-                        <label for="iendereco">Endereço</label>
-                        <input id="iendereco" type="text" name="endereco" placeholder="Digite seu endereço" required>
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" name="endereco" minlength="12" maxlength="40" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="icidade">Cidade</label>
-                        <input id="icidade" type="text" name="cidade" placeholder="Cidade" required>
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" minlength="8" maxlength="30" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="ibairro">Bairro</label>
-                        <input id="ibairro" type="text" name="bairro" placeholder="Bairro" required>
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro" minlength="8" maxlength="30" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="iestado">Estado</label>
-                        <input id="iestado" type="text" name="estado" placeholder="Estado" required minlength="2" maxlength="2">
+                        <label for="uf">UF:</label>
+                        <input type="text" id="uf" name="uf" minlength="2" maxlength="2" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="userId">ID do Usuário:</label>
+                        <input type="number" id="userId" name="userId" required>
                     </div>
 
                 </div>
                 <div class="continue-button">
-                    <button type="submit">Continuar</button>
+                    <button type="submit">Cadastrar</button>
+                    <button type="button" class="button-secondary" id="backButton" disabled>Voltar</button>
                 </div>
+                <div id="response"></div>
             </form>
-            <div id="response"></div>
         </div>
     </div>
 
@@ -60,56 +66,51 @@
         document.getElementById('filiacaoForm').addEventListener('submit', async function(event) {
             event.preventDefault();
 
-            const nome = document.getElementById('inome').value;
-            const endereco = document.getElementById('iendereco').value;
-            const cidade = document.getElementById('icidade').value;
-            const bairro = document.getElementById('ibairro').value;
-            const estado = document.getElementById('iestado').value;
-
             const formData = {
-                userId,
-                nome,
-                endereco,
-                cidade,
-                bairro,
-                estado,
+                nome: document.getElementById('nome').value,
+                endereco: document.getElementById('endereco').value,
+                cidade: document.getElementById('cidade').value,
+                bairro: document.getElementById('bairro').value,
+                uf: document.getElementById('uf').value,
+                userId: parseInt(document.getElementById('userId').value) // Certifique-se de que é um número
             };
 
-            const userId = localStorage.getItem('userId');
+            const token = localStorage.getItem('token');
+            if (!token) {
+                document.getElementById('response').innerText = 'Você precisa fazer login primeiro.';
+                document.getElementById('response').style.color = 'red';
+                return;
+            }
 
             try {
-        const token = localStorage.getItem('token');
+                const response = await fetch('http://localhost:3001/filiacao', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(formData)
+                });
 
-        if (!token) {
-            throw new Error('Token não encontrado. Por favor, faça login novamente.');
-        }
+                const result = await response.json();
 
-        const response = await fetch('http://localhost:3001/filiacao', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(formData)
+                if (response.ok) {
+                    document.getElementById('response').innerText = 'Cadastro realizado com sucesso!';
+                    document.getElementById('response').style.color = 'green';
+                    document.getElementById('backButton').disabled = false; // Ativa o botão de voltar
+                } else {
+                    document.getElementById('response').innerText = `Erro: ${result.message}`;
+                    document.getElementById('response').style.color = 'red';
+                }
+            } catch (error) {
+                document.getElementById('response').innerText = `Erro: ${error.message}`;
+                document.getElementById('response').style.color = 'red';
+            }
         });
 
-        if (response.ok) {
-            document.getElementById('response').innerText = 'Cadastrado com sucesso!';
-            setTimeout(function() {
-                window.location.href = 'tela-inicial.html';
-            }, 2000);
-        } else {
-            const result = await response.json();
-            if (result && result.errors) {
-                document.getElementById('response').innerText = `Erro de validação: ${result.errors}`;
-            } else {
-                document.getElementById('response').innerText = `Erro: ${result.message}`;
-            }
-        }
-    } catch (error) {
-        document.getElementById('response').innerText = `Erro: ${error.message}`;
-    }
-});     
-</script>
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
 </body>
 </html>
