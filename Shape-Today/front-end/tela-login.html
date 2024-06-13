@@ -16,80 +16,48 @@
             <div id="imagem">
                 <!--Aqui vai a imagem na CSS -->
             </div>
-                <form id="login_form">
-                    <div id="form_header">
-                        <h1>Shape Today</h1>
-                        <i id="moon_icon" class="fa-solid fa-moon"></i>
-                    </div>
-        
-                    <div id="inputs">
-                        <div class="input-box">
-                            <label for="email">
-                                E-mail
-                                <div class="input-field">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    <input type="email" id="email" name="email">
-                                </div>
-                            </label>
-                        </div>
-        
-                        <div class="input-box">
-                            <label for="senha">
-                                Password
-                                <div class="input-field">
-                                    <i class="fa-solid fa-key"></i>
-                                    <input type="password" id="senha" name="senha">
-                                </div>
-                            </label>
-                            <div id="forgot_password">
-                                <a href="tela-cadastro.html">
-                                    Não possue conta? Cadastre-se
-                                </a>
+            <form id="login_form">
+                <div id="form_header">
+                    <h1>Shape Today</h1>
+                    <i id="moon_icon" class="fa-solid fa-moon"></i>
+                </div>
+
+                <div id="inputs">
+                    <div class="input-box">
+                        <label for="email">
+                            E-mail
+                            <div class="input-field">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="email" name="email" required>
                             </div>
+                        </label>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="senha">
+                            Password
+                            <div class="input-field">
+                                <i class="fa-solid fa-key"></i>
+                                <input type="password" id="senha" name="senha" required>
+                            </div>
+                        </label>
+                        <div id="forgot_password">
+                            <a href="tela-cadastro.html">
+                                Não possui conta? Cadastre-se
+                            </a>
                         </div>
                     </div>
-        
-                    <button type="submit" id="login_button">
-                        <a href="tela-treino.html">Login</a>
-                    </button>
-                </form>
-        
+                </div>
+
+                <button type="submit" id="login_button">
+                    Login
+                </button>
+                <div id="response"></div>
+            </form>
         </section>
     </main>
 
-    <script type="text/javascript" src="assets/js/tela-login.js">
-        
-        document.getElementById('login_form').addEventListener('submit', async function(event) {
-            event.preventDefault();
-
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('senha').value;
-
-            try {
-                const response = await fetch('http://localhost:3001/auth/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ email, senha })
-                });
-
-                const result = await response.json();
-
-                if (response.ok) {
-                    // Armazenar o token no localStorage
-                    console.log("jose ", response)
-                    localStorage.setItem('token', result.access_token);
-                    document.getElementById('response').innerText = 'Login successful!';
-                } else {
-                    document.getElementById('response').innerText = `Error: ${result.message}`;
-                }
-            } catch (error) {
-                document.getElementById('response').innerText = `Error: ${error.message}`;
-            }
-        });
-    </script>
-
+    <script type="text/javascript" src="assets/js/tela-login.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,260 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Madimi+One&display=swap');
+
+:root {
+    --cor01: #b80000;
+    --cor02: #112128;
+    --cor03: #fdf7fa;
+    --cor04: #151515;
+    --cor05: #141414;
+
+    --title: "Madimi One", sans-serif;
+    --text:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --list: "Roboto Mono", monospace;
+
+    --color-light-50: snow;
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: var(--text)
+}
+
+body,
+html {
+    background-color: var(--cor01);
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+section#lista {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--cor04);
+    width: 250px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px black;
+    transition: width .3s, height .3s;
+    transition-timing-function: ease;
+    transform: translate(-50%, -50%);
+}
+
+section#lista>div#imagem {
+    background: var(--cor01) url(../imgs/pexels-pixabay-260352.jpg) no-repeat;
+    height: 200px;
+    background-size: cover;
+    background-position: right top;
+    display: block;
+}
+
+
+#container {
+    background-color: var(--color-light-50);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    gap: 8px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+    height: 100%;
+    animation: dark-to-light 0.3s ease-in-out;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header h1 {
+    font-size: 25px;
+    position: relative;
+    font-family: var(--text)
+}
+
+#header h1::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    background-color: var(--cor01);
+    height: 3px;
+    bottom: 5px;
+    border-radius: 5px;
+}
+
+#moon_icon {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.dark#container{
+    color: var(--color-light-50);
+    background-color: var(--color-dark-100);
+    animation: light-to-dark 0.3s ease-in-out;
+}
+
+#opc_list h2{
+    font-family: var(--title);
+}
+
+.list-button{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: left;
+   gap: 8px;
+}
+
+#opc_list a{
+    text-decoration: none;
+}
+
+#loadItems {
+    width: 150px;
+    border: none;
+    background-color: var(--cor01);
+    color: var(--color-light-50);
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#loadItems:hover {
+    transform: scale(1.05);
+}
+
+#items{
+    display: flex;
+    justify-content: left;
+}
+
+#items ul {
+    list-style-type: none;
+    padding: 4px;
+}
+
+#items li {
+    padding: 15px;
+    border: 1px solid var(--cor01);
+    border-radius: 5px;
+    font-family: var(--list);
+    font-size: 12px;
+}
+
+.dark#items {
+    color: var(--color-light-50);
+    background-color: var(--color-dark-100);
+    animation: light-to-dark 0.3s ease-in-out; 
+}
+
+@keyframes dark-to-light{
+    0% {
+        background-color: var(--color-dark-100);
+    }
+
+    100% {
+        background-color: var(--color-light-50);
+    }
+}
+
+@keyframes light-to-dark{
+    0% {
+        background-color: var(--color-light-50);
+    }
+
+    100% {
+        background-color: var(--color-dark-100);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    body {
+        background-image: linear-gradient(to bottom, var(--cor01), #4e2128);
+    }
+
+    section#lista {
+        width: 80vw;
+        height: 300px;
+
+    }
+
+    section#lista>div#imagem {
+        float: left;
+        width: 30%;
+        height: 100%;
+    }
+    
+    #header h1 {
+        font-size: 28px;
+    }
+    
+    #moon_icon {
+        font-size: 25px;
+    }
+    
+    .list-button{
+        gap: 12px;
+     }
+    
+    #loadItems {
+        width: 275px;
+    }
+   
+    #items li {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        background-image: linear-gradient(to bottom, var(--cor01), #4e2128);
+    }
+
+    section#lista {
+        width: 950px;
+        height: 350px;
+    }
+
+    section#lista>div#imagem {
+        float: left;
+        width: 40%;
+        height: 100%;
+    }
+
+    #header h1 {
+        font-size: 32px;
+    }
+    
+    #moon_icon {
+        font-size: 28px;
+    }
+
+    .list-button{
+        gap: 20px;
+     }
+    
+    #loadItems {
+        width: 350px;
+    }
+
+    #items li {
+        font-size: 18px;
+    }
+
+}
