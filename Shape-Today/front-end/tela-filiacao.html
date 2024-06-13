@@ -21,28 +21,25 @@
                     </div>
                 </div>
                 <div class="input-group">
-                    <div class="input-box">Endereço</label>
+
+                    <div class="input-box">
+                        <label for="inome">Nome</label>
+                        <input id="inome" type="text" name="nome" placeholder="EX: minha casa" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="iendereco">Endereço</label>
                         <input id="iendereco" type="text" name="endereco" placeholder="Digite seu endereço" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="icidade">Cidade</label>
+                        <input id="icidade" type="text" name="cidade" placeholder="Cidade" required>
                     </div>
 
                     <div class="input-box">
                         <label for="ibairro">Bairro</label>
                         <input id="ibairro" type="text" name="bairro" placeholder="Bairro" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="inumero">Número</label>
-                        <input id="inumero" type="number" name="numero" placeholder="Número" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="icomplemento">Complemento</label>
-                        <input id="icomplemento" type="text" name="complemento" placeholder="Complemento" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="icidadde">Cidade</label>
-                        <input id="icidade" type="text" name="cidade" placeholder="Cidade" required>
                     </div>
 
                     <div class="input-box">
@@ -52,9 +49,10 @@
 
                 </div>
                 <div class="continue-button">
-                    <button type="submit"><a href="tela-login.html">Continuar</a></button>
+                    <button type="submit">Continuar</button>
                 </div>
             </form>
+            <div id="response"></div>
         </div>
     </div>
 
@@ -62,32 +60,56 @@
         document.getElementById('filiacaoForm').addEventListener('submit', async function(event) {
             event.preventDefault();
 
+            const nome = document.getElementById('inome').value;
             const endereco = document.getElementById('iendereco').value;
+            const cidade = document.getElementById('icidade').value;
             const bairro = document.getElementById('ibairro').value;
-            const cidade = document.getElementById('icidade').value
-            const uf = document.getElementById('iestado').value
+            const estado = document.getElementById('iestado').value;
+
+            const formData = {
+                userId,
+                nome,
+                endereco,
+                cidade,
+                bairro,
+                estado,
+            };
+
+            const userId = localStorage.getItem('userId');
 
             try {
-                const response = await fetch('http://localhost:3001/filiacao', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ endereco, bairro, cidade, uf })
-                });
+        const token = localStorage.getItem('token');
 
-                const result = await response.json();
+        if (!token) {
+            throw new Error('Token não encontrado. Por favor, faça login novamente.');
+        }
 
-                if (response.ok) {
-                    // Armazenar o token no localStorage
-                    document.getElementById('response').innerText = 'Cadastrado com sucesso!';
-                } else {
-                    document.getElementById('response').innerText = `Error: ${result.message}`;
-                }
-            } catch (error) {
-                document.getElementById('response').innerText = `Error: ${error.message}`;
+        const response = await fetch('http://localhost:3001/filiacao', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            document.getElementById('response').innerText = 'Cadastrado com sucesso!';
+            setTimeout(function() {
+                window.location.href = 'tela-inicial.html';
+            }, 2000);
+        } else {
+            const result = await response.json();
+            if (result && result.errors) {
+                document.getElementById('response').innerText = `Erro de validação: ${result.errors}`;
+            } else {
+                document.getElementById('response').innerText = `Erro: ${result.message}`;
             }
-        });       
-    </script>
+        }
+    } catch (error) {
+        document.getElementById('response').innerText = `Erro: ${error.message}`;
+    }
+});     
+</script>
 </body>
 </html>

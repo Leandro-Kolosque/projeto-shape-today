@@ -84,16 +84,11 @@ body{
     padding: 6px 16px;
     border-radius: 5px;
     cursor: pointer;
+    color: var(--cor03);
 }
 
 .login-button button:hover{
     transform: scale(1.05);
-}
-
-.login-button a{
-    text-decoration: none;
-    font-weight: 500;
-    color: var(--cor03);
 }
 
 .form-header h1:after{
@@ -162,17 +157,11 @@ body{
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    color: var(--cor03);
 }
 
 .continue-button button:hover{
     transform: scale(1.05);
-}
-
-.continue-button button a{
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--cor03);
 }
 
 .dark#form{
