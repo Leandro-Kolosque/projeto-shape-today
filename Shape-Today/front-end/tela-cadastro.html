@@ -19,9 +19,6 @@
                     <div class="title">
                         <h1>Cadastre-se</h1>
                     </div>
-                    <div class="login-button">
-                        <button type="button" onclick="window.location.href='tela-filiacao.html'">Entrar</button>
-                    </div>
                 </div>
                 <div class="input-group">
                     <div class="input-box">
@@ -73,8 +70,8 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
         });
 
         if (response.ok) {
-            // Redireciona para a página de login ou mostra uma mensagem de sucesso
-            window.location.href = 'tela-filiacao.html';
+            // Redireciona para a página de login
+            window.location.href = 'tela-login.html';
         } else {
             const errorData = await response.json();
             alert('Erro: ' + errorData.message);
