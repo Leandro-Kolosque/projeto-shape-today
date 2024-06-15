@@ -11,14 +11,14 @@
 <body onresize="changedSize()">
     <header>
         <nav class="menu" >
-            <div class="logo">
+            <div class="logo" id="home">
                 <img src="assets/imgs/logo_redondo_vermelho.png" alt="Logo Shape Today">
             </div>
             <ul id="itemMenu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Unidades</a></li>
-                <li><a href="#">Aplicativo</a></li>
+                <li><a href="#wrapper">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#unidades">Unidades</a></li>
+                <li><a href="#aplicativo">Aplicativo</a></li>
                 <li><a href="tela-login.html"><span class="contato">Login</span></a></li>
             </ul>
             <div class="menu-icon">
@@ -29,10 +29,10 @@
 
     <main>
         <section class="home">
-            <div class="wrapper">
+            <div class="wrapper" id="wrapper">
                 <h2>Mude de Vida Agora !! <br> Sua Saúde em Primeiro Lugar</h2>
             </div>
-            <div class="sobre">
+            <div class="sobre" id="sobre">
                 <div class="sobre-title">
                     <h2> Sobre a <span class="shape-today">Shape Today</span></h2>
                 </div>
@@ -51,7 +51,7 @@
             </div>
         </section>
 
-        <section class="unidades">
+        <section class="unidades" id="unidades">
             <div class="unidades-title">
                 <h2>Unidades</h2>
             </div>
@@ -112,7 +112,7 @@
 
         </section>
 
-        <section class="aplicativo">
+        <section class="aplicativo" id="aplicativo">
             <div class="div-app">
                 <img class="app-img" src="assets/imgs/foto-app.png" alt="Foto de um celular">
                 <div class="div-app-list">
@@ -131,7 +131,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="">
         <div class="footerContainer">
             <div class="socialIcons">
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -141,11 +141,11 @@
                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
             </div>
             <div class="footerNav">
-                <ul><li><a href="#">Home</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Unidades</a></li>
-                    <li><a href="#">Aplicativo</a></li>
-                    <li><a href="#">Contato</a></li>
+                <ul><li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#unidades">Unidades</a></li>
+                    <li><a href="#aplicativo">Aplicativo</a></li>
+                    <li><a href="tela-login.html">Login</a></li>
                 </ul>
             </div>          
         </div>
