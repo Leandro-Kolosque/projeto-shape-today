@@ -139,6 +139,11 @@ body {
     .wrapper {
         width: 100%;
     }
+
+    .input-group  img{
+        height: 95px;
+        width: 95px;
+    }
 }
 
 @media screen and (max-width: 1064px) {
@@ -154,11 +159,25 @@ body {
         overflow-y: scroll;
         flex-wrap: nowrap;
     }
+
+    .input-group  img{
+        height: 95px;
+        width: 95px;
+    }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1355px) {
     .input-group  img{
-        height: 100px;
-        width: 100px;
+        height: 75px;
+        width: 75px;
+    }
+
+    .input-box input {
+        margin: 0.2rem 0;
+        padding: 0.4rem 1rem;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 1px 1px 6px #0000001c;
+        font-size: 0.8rem;
     }
 }
