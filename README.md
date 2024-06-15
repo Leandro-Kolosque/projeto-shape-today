@@ -32,11 +32,14 @@ Logo abaixo está sendo exibido o layout da Landing page do site.
 
 ## AUTORES
 Diogo Dias Pimentel <br>
+RA: 823152504 <br>
 linkedIN : <https://www.linkedin.com/in/diogodiaspimentel-1d81n3970>
 
 Eduardo Bussadori Leite <br>
+RA: 823120407 <br>
 LinkedIN : <https://www.linkedin.com/in/eduardo-leite-746352274/>
 
 Leandro Wirgert Kolosque <br>
+RA: 823114334 <br>
 LinkedIN : <https://www.linkedin.com/in/leandro-kolosque-4484592b8/>
 

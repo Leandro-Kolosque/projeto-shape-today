@@ -81,7 +81,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.1rem;
-    padding: 0px 4px;
+    padding: 0px 7px;
 }
 
 .input-box input {
@@ -134,7 +134,7 @@ body {
 
 @media screen and (max-width: 1450px) {
     .container {
-        width: 50%;
+        width: 95%;
     }
     .wrapper {
         width: 100%;
@@ -143,6 +143,15 @@ body {
     .input-group  img{
         height: 95px;
         width: 95px;
+    }
+
+    .input-box input {
+        margin: 0.2rem 0;
+        padding: 0.4rem 1rem;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 1px 1px 6px #0000001c;
+        font-size: 0.8rem;
     }
 }
 
