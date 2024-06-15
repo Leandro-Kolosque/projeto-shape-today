@@ -139,8 +139,6 @@ section#treino>div#imagem {
     transform: scale(1.05);
 }
 
-
-
 @keyframes dark-to-light{
     0% {
         background-color: var(--color-dark-100);
