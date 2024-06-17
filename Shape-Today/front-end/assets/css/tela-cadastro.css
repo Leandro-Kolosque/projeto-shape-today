@@ -37,8 +37,8 @@ body{
 }
 
 .container{
-    width: 80%;
-    height: 80vh;
+    width: 90%;
+    height: 94vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
 }
@@ -91,6 +91,9 @@ body{
     transform: scale(1.05);
 }
 
+.form-header p{
+    padding: 4px;
+}
 .form-header h1:after{
     content: ' ';
     display: block;
@@ -124,27 +127,6 @@ body{
 }
 
 .input-box label, .gender-title h6{
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.gender-group{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    padding: 0px 8px;
-}
-
-.gender-input{
-    display: flex;
-    align-items: center;
-}
-
-.gender-input input{
-    margin-right: 6px;
-}
-
-.gender-input label{
     font-size: 12px;
     font-weight: 600;
 }
@@ -195,17 +177,5 @@ body{
         flex-wrap: nowrap;
         max-height: 160px;
         padding-right: 80px;
-    }
-
-    .gender-input{
-        margin-top: 32px;
-    }
-
-    .gender-group{
-        flex-direction: column;
-    }
-
-    .gender-input{
-        margin-top: 8px;
     }
 }

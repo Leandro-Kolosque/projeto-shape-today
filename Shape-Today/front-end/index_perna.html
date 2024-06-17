@@ -2,74 +2,80 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/style_treinos.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/imgs/icons8-haltere-16.png" type="image/x-icon">
-    <title>Perna e Glueteo</title>
+    <link rel="shortcut icon" href="./assets/imgs/icons8-haltere-16.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style_treinos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Treino de Perna</title>
 </head>
 <body>
     <div class="container">
-        <div class="titulo">
-            <h1>Para seu treino de Perna e Glueteo nós providenciamos os seguintes Exercicios:</h1>
-        </div>
-        <br>
-        <div class="treinos1">
-            <h1>
-                <u>Exercicios de Perna:</u> <br>
-                <img class="treino-imagem" height="150px" width="150px" src="assets/imgs/PernaEGluteo/Afundo.gif" alt="treino1_gif">
-                <div class="resposta">
-                    Afundo - <br> 
-                    <li>Séries: 4</li>
-                    <li>Repetições: 8</li>
-                    <li>Carga: <input type="text" name="Registre sua Carga" id="RegistroCarga"></li> 
+        <div class="wrapper">
+            <form action="#">
+                <div class="treino-header">
+                    <div class="title">
+                        <h1>Shape Today</h1>
+                    </div>
                 </div>
-                <br>
-                <img class="treino-imagem" height="150px" width="150px" src="assets/imgs/PernaEGluteo/AgachamentoLivre.gif" alt="treino2_gif">
-                <div class="resposta">
-                    Agachamento Livre - <br> 
-                    <li>Séries: 4</li>
-                    <li>Repetições: 10</li>
-                    <li>Carga: <input type="text" name="Registre sua Carga" id="RegistroCarga"></li> 
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <h3>Afundo</h3>
+                        <img height="150px" width="150px" src="assets/imgs/PernaEGluteo/Afundo.gif" alt="treino1_gif">
+                        <li>Séries: 4</li>
+                        <li>Repetições: 8</li>
+                        <input id="carga" type="text" name="carga" placeholder="Digite a carga utilizada" required>
+                    </div>
+
+                    <div class="input-box">
+                        <h3>Agachamento Livre</h3>
+                        <img height="150px" width="150px" src="assets/imgs/PernaEGluteo/AgachamentoLivre.gif" alt="treino2_gif">
+                        <li>Séries: 4</li>
+                        <li>Repetições: 10</li>
+                        <input id="carga" type="text" name="carga" placeholder="Digite a carga utilizada" required>
+                    </div>
+
+                    <div class="input-box">
+                        <h3>Cadeira Extensora</h3>
+                        <img height="150px" width="150px" src="assets/imgs/PernaEGluteo/CadeiraExtensora.gif" alt="treino3_gif">
+                        <li>Séries: 4</li>
+                        <li>Repetições: 10</li>
+                        <input id="carga" type="text" name="carga" placeholder="Digite a carga utilizada" required>
+                    </div>
+
+                    
+
+                    <div class="input-box">
+                        <h3>Leg Press</h3>
+                        <img height="150px" width="150px" src="assets/imgs/PernaEGluteo/LegPress.gif" alt="treino4_gif">
+                        <li>Séries: 4</li>
+                        <li>Repetições: 10</li>
+                        <input id="carga" type="text" name="carga" placeholder="Digite a carga utilizada" required>
+                    </div>
+
+                    <div class="input-box">
+                        <h3>Levantamento Terra</h3>
+                        <img height="150px" width="150px" src="assets/imgs/PernaEGluteo/LevantamentoTerra.gif" alt="treino5_gif">
+                        <li>Séries: 3</li>
+                        <li>Repetições: 8</li>
+                        <input id="carga" type="text" name="carga" placeholder="Digite a carga utilizada" required>
+                    </div>
+
+                    <div class="input-box">
+                        <h3>Mesa Flexora</h3>
+                        <img height="150px" width="150px" src="assets/imgs/PernaEGluteo/MesaFlexora.gif" alt="treino6_gif">
+                        <li>Séries: 4</li>
+                        <li>Repetições: 8</li>
+                        <input id="carga" type="text" name="carga" placeholder="Digite a carga utilizada" required>
+                    </div>
                 </div>
-                <br>
-                <img class="treino-imagem" height="150px" width="150px" src="assets/imgs/PernaEGluteo/CadeiraExtensora.gif" alt="treino3_gif">
-                <div class="resposta">
-                   Cadeira Extensora - <br> 
-                    <li>Séries: 4</li>
-                    <li>Repetições: 10</li>
-                    <li>Carga: <input type="text" name="Registre sua Carga" id="RegistroCarga"></li> 
+                
+                <div class="continue-button">
+                    <button><a href="tela-treino.html">Voltar</a></button>
                 </div>
-            </h1>
-        </div>
-        <div class="treinos2">
-            <h1>
-                <u>Exercicios de Gluteo:</u> <br>
-                <img class="treino-imagem" height="150px" width="150px" src="assets/imgs/PernaEGluteo/LegPress.gif" alt="treino4_gif">
-                <div class="resposta">
-                    LegPress - <br> 
-                    <li>Séries: 4</li>
-                    <li>Repetições: 10</li>
-                    <li>Carga: <input type="text" name="Registre sua Carga" id="RegistroCarga"></li> 
-                </div>
-                <br>
-                <img class="treino-imagem" height="150px" width="150px" src="assets/imgs/PernaEGluteo/LevantamentoTerra.gif" alt="treino5_gif">
-                <div class="resposta">
-                    Levantamento Terra - <br>
-                    <li>Séries: 3</li>
-                    <li>Repetições: 8</li>
-                    <li>Carga: <input type="text" name="Registre sua Carga" id="RegistroCarga"></li> 
-                </div>
-                <br>
-                <img class="treino-imagem" height="150px" width="150px" src="assets/imgs/PernaEGluteo/MesaFlexora.gif" alt="treino6_gif">
-                <div class="resposta">
-                   Mesa Flexora - <br> 
-                    <li>Séries: 4</li>
-                    <li>Repetições: 8</li>
-                    <li>Carga: <input type="text" name="Registre sua Carga" id="RegistroCarga"></li> 
-                </div>
-            </h1>
-            <a href="tela-treino.html"><button>VOLTAR</button></a>
+            </form>
         </div>
     </div>
 </body>
+
 </html>
