@@ -21,6 +21,9 @@ const filiacao_controller_1 = require("./controller/filiacao.controller");
 const treino_service_1 = require("./service/treino.service");
 const treino_controller_1 = require("./controller/treino.controller");
 const treino_entity_1 = require("./entity/treino.entity");
+const dttreino_service_1 = require("./service/dttreino.service");
+const dttreino_controller_1 = require("./controller/dttreino.controller");
+const dttreino_entity_1 = require("./entity/dttreino.entity");
 let UserModule = class UserModule {
 };
 exports.UserModule = UserModule;
@@ -28,10 +31,10 @@ exports.UserModule = UserModule = __decorate([
     (0, common_1.Module)({
         imports: [
             database_module_1.DatabaseModule,
-            typeorm_1.TypeOrmModule.forFeature([user_entity_1.User, filiacao_entity_1.Filiacao, treino_entity_1.Treino]),
+            typeorm_1.TypeOrmModule.forFeature([user_entity_1.User, filiacao_entity_1.Filiacao, treino_entity_1.Treino, dttreino_entity_1.Dttreino]),
         ],
-        controllers: [app_controller_1.AppController, user_controller_1.UserController, filiacao_controller_1.FiliacaoController, treino_controller_1.TreinoController],
-        providers: [app_service_1.AppService, user_service_1.UserService, filiacao_service_1.FiliacaoService, treino_service_1.TreinoService],
+        controllers: [app_controller_1.AppController, user_controller_1.UserController, filiacao_controller_1.FiliacaoController, treino_controller_1.TreinoController, dttreino_controller_1.DttreinoController],
+        providers: [app_service_1.AppService, user_service_1.UserService, filiacao_service_1.FiliacaoService, treino_service_1.TreinoService, dttreino_service_1.DttreinoService],
     })
 ], UserModule);
 //# sourceMappingURL=user.module.js.map

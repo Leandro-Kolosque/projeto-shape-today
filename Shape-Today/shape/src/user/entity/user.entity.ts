@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'; 
 import { Filiacao } from './filiacao.entity';
-import { Treino } from './treino.entity'; 
+import { Treino } from './treino.entity';
 
 @Entity('user')
 export class User {
@@ -23,5 +23,5 @@ export class User {
   filiacoes: Filiacao[]; 
 
   @OneToMany(() => Treino, treino => treino.user) 
-    treinos: Treino[];                                
+  treinos: Treino[];  
 }

@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToOne } from 'typeorm';
 import { User } from './user.entity';
+import { Dttreino } from './dttreino.entity';
 
 @Entity('treino')
 export class Treino {
@@ -20,4 +21,7 @@ export class Treino {
 
     @ManyToOne(() => User, user => user.treinos)
     user: User; 
+
+    @OneToOne(() => Dttreino, treino => treino.user)
+    dttreinos: Dttreino[];  
 }

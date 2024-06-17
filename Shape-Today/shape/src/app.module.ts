@@ -8,13 +8,14 @@ import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { Treino } from './user/entity/treino.entity';
+import { Dttreino } from './user/entity/dttreino.entity';
 
 
 @Module({
   imports: [
     DatabaseModule,
     UserModule,
-    TypeOrmModule.forFeature([User, Filiacao, Treino]),
+    TypeOrmModule.forFeature([User, Filiacao, Treino, Dttreino]),
     AuthModule,
   ],
   controllers: [AppController],

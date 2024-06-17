@@ -12,13 +12,16 @@ import { FiliacaoController } from './controller/filiacao.controller';
 import { TreinoService } from './service/treino.service';
 import { TreinoController } from './controller/treino.controller';
 import { Treino } from './entity/treino.entity';
+import { DttreinoService } from './service/dttreino.service';
+import { DttreinoController } from './controller/dttreino.controller';
+import { Dttreino } from './entity/dttreino.entity';
 
 @Module({
   imports: [
     DatabaseModule,
-    TypeOrmModule.forFeature([User, Filiacao, Treino]),
+    TypeOrmModule.forFeature([User, Filiacao, Treino, Dttreino]),
   ],
-  controllers: [AppController, UserController, FiliacaoController, TreinoController],
-  providers: [AppService, UserService, FiliacaoService, TreinoService],
+  controllers: [AppController, UserController, FiliacaoController, TreinoController, DttreinoController],
+  providers: [AppService, UserService, FiliacaoService, TreinoService, DttreinoService],
 })
 export class UserModule {}

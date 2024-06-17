@@ -17,6 +17,7 @@ const user_module_1 = require("./user/user.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const auth_module_1 = require("./auth/auth.module");
 const treino_entity_1 = require("./user/entity/treino.entity");
+const dttreino_entity_1 = require("./user/entity/dttreino.entity");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -25,7 +26,7 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             database_module_1.DatabaseModule,
             user_module_1.UserModule,
-            typeorm_1.TypeOrmModule.forFeature([user_entity_1.User, filiacao_entity_1.Filiacao, treino_entity_1.Treino]),
+            typeorm_1.TypeOrmModule.forFeature([user_entity_1.User, filiacao_entity_1.Filiacao, treino_entity_1.Treino, dttreino_entity_1.Dttreino]),
             auth_module_1.AuthModule,
         ],
         controllers: [app_controller_1.AppController],

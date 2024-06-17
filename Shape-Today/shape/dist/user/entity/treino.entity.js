@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Treino = void 0;
 const typeorm_1 = require("typeorm");
 const user_entity_1 = require("./user.entity");
+const dttreino_entity_1 = require("./dttreino.entity");
 let Treino = class Treino {
 };
 exports.Treino = Treino;
@@ -39,6 +40,10 @@ __decorate([
     (0, typeorm_1.ManyToOne)(() => user_entity_1.User, user => user.treinos),
     __metadata("design:type", user_entity_1.User)
 ], Treino.prototype, "user", void 0);
+__decorate([
+    (0, typeorm_1.OneToOne)(() => dttreino_entity_1.Dttreino, treino => treino.user),
+    __metadata("design:type", Array)
+], Treino.prototype, "dttreinos", void 0);
 exports.Treino = Treino = __decorate([
     (0, typeorm_1.Entity)('treino')
 ], Treino);
