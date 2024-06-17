@@ -391,7 +391,7 @@ footer{
 }
 
 .footerNav ul li a{
-    color:var(--cor01);
+    color:var(--cor03);
     margin: 20px;
     text-decoration: none;
     font-size: 20px;
@@ -402,7 +402,7 @@ footer{
 }
 .footerNav ul li a:hover{
     opacity: 1;
-    color: var(--cor03);
+    color: var(--cor01);
 }
 
 @media (max-width: 600px){
