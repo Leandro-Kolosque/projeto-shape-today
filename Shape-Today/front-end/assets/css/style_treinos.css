@@ -50,7 +50,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--cor03);
-    padding: 3rem;
+    padding: 4rem;
 }
 
 .treino-header {
@@ -81,7 +81,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.1rem;
-    padding: 0px 7px;
+    padding: 0px 0px;
 }
 
 .input-box input {
