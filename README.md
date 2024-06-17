@@ -11,9 +11,9 @@ alem de englobar os conceitos de: como estruturar um layout, tecnicas de CSS3 co
 Logo abaixo está sendo exibido o layout da Landing page do site.
 
 <div >
- <img src="https://media.discordapp.net/attachments/674057114506756102/1226090241400770560/image.png?ex=6664c2c5&is=66637145&hm=727192506833b8f188d0c4db30a033f54207244f7d9e9d1b155fb15d917cec73&=&format=webp&quality=lossless&width=687&height=337" </img>
-  <img src="https://media.discordapp.net/attachments/674057114506756102/1226090470804029492/image.png?ex=6664c2fb&is=6663717b&hm=efec99457161741990577906af94dd15362a6b5a53dded3115ece829179b2e07&=&format=webp&quality=lossless&width=687&height=321" </img>
-  <img src = "https://media.discordapp.net/attachments/674057114506756102/1226090584788439050/image.png?ex=6664c317&is=66637197&hm=0adad7f828c20ca79f544b995d0058661c4c028bad8e27fa4e70efbd5a4e9fb3&=&format=webp&quality=lossless&width=687&height=333" </img>
+ <img src="https://media.discordapp.net/attachments/674057114506756102/1252407340737495070/image.png?ex=66721aba&is=6670c93a&hm=1c99068d8603f5f3702273bdf69a27614295d35b37a4944a2130b453830df3c5&=&format=webp&quality=lossless&width=1388&height=670" </img>
+  <img src="https://media.discordapp.net/attachments/674057114506756102/1252407983904915496/image.png?ex=66721b53&is=6670c9d3&hm=e7245ecdcbe9444c42ac6a7af62b57a15e8d5e11070e9e09edc9c91b57da968e&=&format=webp&quality=lossless&width=1393&height=670" </img>
+  <img src = "https://media.discordapp.net/attachments/674057114506756102/1252407538440470631/image.png?ex=66721ae9&is=6670c969&hm=9ee8d332d1d7159a12f7843602cfb11556df74faa31af2db8e8863e345328fb6&=&format=webp&quality=lossless&width=1388&height=670" </img>
 </div>
 
 ## TECNOLOGIAS UTILIZADAS
